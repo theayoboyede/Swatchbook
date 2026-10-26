@@ -4,8 +4,6 @@ A color palette generator for designers and developers. Pick a base color, choos
 
 ![Swatchbook screenshot](screenshot.png)
 
-<!-- Replace screenshot.png with a real screenshot of the app, or delete the line above. -->
-
 ## Features
 
 - **Six harmony modes:** analogous, complementary, triadic, split complementary, tetradic and monochrome.
@@ -69,12 +67,8 @@ square: {
 1. Push the repository to GitHub.
 2. Go to **Settings**, then **Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, and save.
-4. The site will be live at `https://YOUR-USERNAME.github.io/swatchbook/`.
+4. The site will be live at `https://theayoboyede.github.io/swatchbook/`.
 
 ## Built with
 
 HTML, CSS and vanilla JavaScript. No frameworks or dependencies.
-
-## License
-
-Add a license of your choice before sharing. [MIT](https://choosealicense.com/licenses/mit/) is a common option for small projects like this.
