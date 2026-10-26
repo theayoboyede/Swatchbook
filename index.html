@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swatchbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Mono:wght@400;500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div>
+      <h1>Swatchbook</h1>
+      <p class="sub">Pick a base color, choose a harmony, and copy the values you need.</p>
+    </div>
+    <button class="btn" id="shuffle" type="button">Shuffle <kbd>Space</kbd></button>
+  </header>
+
+  <section class="controls" aria-label="Base color and harmony">
+    <div class="field">
+      <label class="label" for="hexIn">Base color</label>
+      <div class="base">
+        <input type="color" id="picker" aria-label="Choose base color">
+        <input type="text" id="hexIn" maxlength="7" spellcheck="false" autocomplete="off" aria-label="Base color hex value">
+      </div>
+    </div>
+    <fieldset class="modes">
+      <legend class="label">Harmony</legend>
+      <div class="pills" id="modes"></div>
+    </fieldset>
+  </section>
+
+  <section aria-labelledby="h-palette">
+    <div class="section-head">
+      <h2 id="h-palette">Palette</h2>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <span class="hint">Click a chip to copy its hex.</span>
+        <button class="btn ghost" id="save" type="button">Save palette</button>
+      </div>
+    </div>
+    <div class="strips" id="strips"></div>
+  </section>
+
+  <section aria-labelledby="h-scale">
+    <div class="section-head">
+      <h2 id="h-scale">Shade scale</h2>
+      <span class="hint">Ten steps of the base hue, from 50 to 900. The dot marks the closest step to your base.</span>
+    </div>
+    <div class="scale" id="scale"></div>
+  </section>
+
+  <section aria-labelledby="h-contrast">
+    <div class="section-head">
+      <h2 id="h-contrast">Text contrast</h2>
+      <span class="hint">Each row is text, each column is its background. Ratios follow WCAG 2.1.</span>
+    </div>
+    <div class="matrix-wrap"><table id="matrix"></table></div>
+  </section>
+
+  <section aria-labelledby="h-export">
+    <div class="section-head"><h2 id="h-export">Export</h2></div>
+    <div class="export">
+      <div class="tabs" role="tablist" id="tabs">
+        <button class="tab" role="tab" data-fmt="css" aria-selected="true" type="button">CSS variables</button>
+        <button class="tab" role="tab" data-fmt="json" aria-selected="false" type="button">JSON</button>
+        <button class="tab" role="tab" data-fmt="tailwind" aria-selected="false" type="button">Tailwind</button>
+        <span class="spacer"></span>
+        <button class="btn ghost" id="copyExport" type="button">Copy</button>
+      </div>
+      <pre id="exportOut"></pre>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-saved">
+    <div class="section-head">
+      <h2 id="h-saved">Saved palettes</h2>
+      <span class="hint">Kept in this browser only.</span>
+    </div>
+    <div class="saved" id="saved"></div>
+  </section>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
